@@ -27,6 +27,7 @@ const Registration = (props) => {
       name: "",
       email: "",
       password: "",
+      isAdmin: false,
     },
     validationSchema: schema,
     onSubmit: async (values) => {
@@ -94,6 +95,16 @@ const Registration = (props) => {
                   {formik.errors.password}
                 </Form.Control.Feedback>
               </InputGroup>
+            </Form.Group>
+
+            <Form.Group type className="mb-3" controlId="isAdmin">
+              <Form.Label>isAdmin</Form.Label>
+              <Form.Check
+                value={formik.values.isAdmin}
+                type="checkbox"
+                label="isAdmin"
+                onChange={formik.handleChange}
+              />
             </Form.Group>
 
             <Button variant="primary" type="submit">

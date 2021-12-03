@@ -26,6 +26,7 @@ function validateUser(user) {
     name: Joi.string().required().min(4).max(25),
     email: Joi.string().required().max(255).email(),
     password: Joi.string().min(5).max(255).required(),
+    isAdmin: Joi.boolean(),
   });
 
   return schema.validate(user);
